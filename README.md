@@ -17,8 +17,6 @@ The TCGA slide proportions are 71.3%/10.0%/18.7% (approximately 70/10/20). All f
 python3 prepare_split.py
 ```
 
-The CSVs contain slide IDs, patient IDs, labels, and cohort only. They contain no local paths or images. Confirm the right to redistribute the DGIST annotations before making this folder public.
-
 ## Required features
 
 Both models consume **UNI v1** slide patch features, one HDF5 file per slide. Each feature directory must contain `<slide>.h5` for every corresponding CSV row. Each file must have a `features` dataset shaped `[patches, 1024]` and a true `complete` attribute. TCGA and DGIST may reside in separate directories. Their paths are supplied at runtime and never stored in the CSVs.
