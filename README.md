@@ -1,6 +1,6 @@
 # TCGA/DGIST molecular-subtype MIL reproduction package
 
-This repository contains the fixed, patient-disjoint CSV split and self-contained training/evaluation code for **TransMIL-MBA** and **ACMIL-GA** on four gastric molecular subtypes. It is a clean-split experiment package; it does not contain the historical checkpoints or scores from earlier, overlapping splits.
+This repository contains the fixed, patient-disjoint CSV split and self-contained training/evaluation code for **TransMIL-MBA** and **ACMIL-GA** on four gastric molecular subtypes.
 
 ## Data and split
 
