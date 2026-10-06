@@ -46,7 +46,3 @@ python3 evaluate.py --model acmil --tcga-features /path/to/tcga_uni_h5 --dgist-f
 ```
 
 Alternatively set `TCGA_FEATURE_DIR`, `DGIST_FEATURE_DIR`, and optionally `PYTHON`, then run `bash run_models.sh`. For a one-step hardware and data check, run `python3 train.py --model transmil_mba --tcga-features /path/to/tcga_uni_h5 --smoke` (and likewise for `acmil`). Smoke mode writes no checkpoint.
-
-Each training run writes `runs/<model>_seed20260926/`. It refuses to overwrite an existing `best.pt`. Training uses seed 20260926, AdamW (learning rate `1e-4`, weight decay `1e-3`), effective batch 16, class-balanced patient sampling with one slide per sampled patient, and a cosine learning-rate schedule. It selects the checkpoint by **validation patient balanced accuracy** (earliest tie), with at least 20 and at most 60 epochs and patience 15. The test data is read only by `evaluate.py` after training has completed. Evaluation reports slide accuracy, balanced accuracy, per-class recall, confusion matrix, and macro one-vs-rest AUROC for each test cohort.
-
-Model code under `models/` is bundled for standalone use. ACMIL components are based on the [ACMIL repository](https://github.com/dazhangyu123/ACMIL), licensed under MIT (see `LICENSE`); `TransMIL-MBA` is the local extension used in this experiment. The CSV split generator is deterministic and uses patient IDs and class labels, never model predictions.
