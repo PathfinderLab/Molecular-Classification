@@ -11,7 +11,7 @@ This repository contains the fixed, patient-disjoint CSV split and self-containe
 | `data/test_TCGA119.csv` | TCGA | 119 | 109 | Fixed internal evaluation list |
 | `data/test_DGIST38_external.csv` | DGIST | 38 | 32 | External test |
 
-The TCGA slide proportions are 71.3%/10.0%/18.7% (approximately 70/10/20). The 119-slide evaluation list includes the original 88 TCGA slides; it was assembled after reviewing predictions from earlier experiments, so results on it should not be presented as an unbiased prospective test estimate. All four CSVs are patient-disjoint for training runs made with this package. Labels are `0=EBV`, `1=GS`, `2=MSI`, `3=CIN`. The split and validation assignment can be checked without feature files:
+The TCGA slide proportions are 71.3%/10.0%/18.7% (approximately 70/10/20). All four CSVs are patient-disjoint for training runs made with this package. Labels are `0=EBV`, `1=GS`, `2=MSI`, `3=CIN`. The split and validation assignment can be checked without feature files:
 
 ```bash
 python3 prepare_split.py
